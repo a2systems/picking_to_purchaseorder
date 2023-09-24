@@ -1,0 +1,19 @@
+<odoo>
+
+   <record model="ir.ui.view" id="skyloom_stock_picking_po_form">
+        <field name="name">skyloom.stock.picking.po.form</field>
+        <field name="model">stock.picking</field>
+        <field name="inherit_id" ref="stock.view_picking_form"></field>
+        <field name="arch" type="xml">
+                <xpath expr="//header" position="inside" >
+                        <button name="btn_link_purchase_order"
+                                type="object"
+                                attrs="{'invisible': ['|',('picking_type_code','!=','incoming'),('state','!=','done')]}"
+                                string="Add to PO" />
+                </xpath>
+        </field>
+    </record>
+
+
+</odoo>
+
